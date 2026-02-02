@@ -1,0 +1,18 @@
+[toolchain]
+
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+guardian_vault = "wy7kkPnizRCbXvrG6fBkuat6q8AwbwTgnjxhZWcg3Si"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "Localnet"
+wallet = "/Users/cmpgfb/.config/solana/id.json"
+
+[scripts]
+test = "yarn run mocha -t 1000000 tests/"

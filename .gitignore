@@ -1,0 +1,38 @@
+# Built outputs
+target/
+node_modules/
+dist/
+
+# Anchor
+.anchor/
+target/deploy/*.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Test outputs
+test-ledger/
+
+# Mobile
+mobile/node_modules/
+mobile/.expo/
+mobile/ios/Pods/
+mobile/android/.gradle/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
