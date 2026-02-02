@@ -1,144 +1,151 @@
 # Guardian Vault - Devnet to Mainnet Roadmap
 
-## Pre-Devnet Requirements (Current Phase)
-
-### ✅ Completed
-- [x] All CRITICAL security issues fixed
-- [x] All HIGH security issues fixed
-- [x] Pyth SDK integration with devnet feature flag
-- [x] jUSDi mint authority constraint
-- [x] All tests passing (3/3)
-- [x] Audit score: 93/100
-
-### ⏳ Pending
-- [ ] Acquire 3.5 SOL for Devnet deployment
-- [ ] Deploy program binary
-- [ ] Initialize VaultState PDA
-- [ ] Create/link test token mints
+> **Last Updated**: February 2, 2026
+> **Current Phase**: Devnet Testing
 
 ---
 
-## Mobile Testing Strategy
+## ✅ Phase 1: Pre-Devnet (COMPLETED)
 
-### A. Testing WITHOUT Solana Seeker (Emulator/Browser)
+| Task | Status |
+| :--- | :---: |
+| All CRITICAL security issues fixed | ✅ |
+| All HIGH security issues fixed | ✅ |
+| Pyth SDK integration | ✅ |
+| jUSDi mint authority constraint | ✅ |
+| All tests passing (3/3) | ✅ |
+| Audit score: 93/100 | ✅ |
+| **Devnet Deployment** | ✅ **LIVE** |
 
-1. **Local Emulator Setup**
-   ```bash
-   # Start local validator
-   solana-test-validator --reset
-   
-   # Deploy program
-   anchor deploy
-   
-   # Run integration tests
-   anchor test --skip-local-validator
-   ```
-
-2. **React Native Simulator**
-   - Use Expo with Solana Web3.js
-   - Mock the Seed Vault with a local keypair
-   - Test UI flows: deposit, borrow, harvest, withdraw
-
-3. **Devnet Web Testing**
-   - Connect with Phantom/Backpack browser extension
-   - Test all transactions on Devnet
-   - Verify jUSDi minting and transfers
-
-### B. Testing WITH Solana Seeker Device
-
-1. **Prerequisites**
-   - Solana Seeker with Seed Vault enabled
-   - Mobile Wallet Adapter (MWA) SDK integrated
-   - Devnet-configured app build
-
-2. **Seed Vault Integration**
-   ```typescript
-   // SeedVaultService.ts
-   import { transact } from '@solana-mobile/mobile-wallet-adapter-protocol';
-   
-   const signTx = async (tx: Transaction) => {
-     return await transact(async (wallet) => {
-       await wallet.authorize({ cluster: 'devnet' });
-       const signed = await wallet.signTransactions({ transactions: [tx] });
-       return signed[0];
-     });
-   };
-   ```
-
-3. **Test Cases**
-   | Test | Steps | Expected |
-   | :--- | :--- | :--- |
-   | Connect Wallet | Open app → Tap "Connect" | Seed Vault prompt appears |
-   | Biometric Auth | Tap "Deposit" → Approve | Face/Fingerprint triggers |
-   | Deposit Flow | Enter amount → Confirm | SKR transferred, jUSDi minted |
-   | Harvest | Wait 1 min → Tap Harvest | Debt reduced |
-   | Withdraw | Zero debt → Withdraw | Cooldown starts → Complete after 48h |
+### Deployed Program
+| Item | Value |
+| :--- | :--- |
+| **Program ID** | `DwuGR9qYkgYUPxR6jZSkAHdv23YPeqaAwxLAG593L1ar` |
+| **Network** | Devnet |
+| **Deploy Date** | Feb 2, 2026 |
+| **Deploy Cost** | ~3.4 SOL |
 
 ---
 
-## Devnet Deployment Costs
+## 🔄 Phase 2: Devnet Testing (CURRENT)
 
-| Item | SOL | Notes |
-| :--- | ---: | :--- |
-| Program Deploy (~150KB) | ~3.0 | Binary upload |
-| VaultState PDA | ~0.002 | 256 bytes |
-| GuardianList PDA | ~0.003 | ~500 bytes |
-| Test Transactions (200) | ~0.1 | At 5000 lamports/tx |
-| Buffer | ~0.4 | For failed txs |
-| **Total Devnet** | **~3.5 SOL** | Request from faucet |
+### Immediate Tasks
+- [ ] Initialize VaultState PDA on Devnet
+- [ ] Create test SKR mint
+- [ ] Create jUSDi mint + transfer authority to vault
+- [ ] Build mobile app (Xcode in progress)
+- [ ] Test full lifecycle on Seeker device
+
+### Mobile App Tasks
+- [ ] Connect React Native to deployed program
+- [ ] Implement MWA transact() with Seed Vault
+- [ ] Build release APK
+- [ ] Record demo video
+
+### Testing Checklist
+| Test | Status |
+| :--- | :---: |
+| Connect Seed Vault | ⏳ |
+| Deposit SKR collateral | ⏳ |
+| Borrow jUSDi | ⏳ |
+| Harvest rewards | ⏳ |
+| Start withdrawal cooldown | ⏳ |
+| Complete withdrawal | ⏳ |
+| Liquidation (if applicable) | ⏳ |
 
 ---
 
-## Mainnet Roadmap
+## ⏳ Phase 3: Hackathon Submission (This Week)
 
-### Phase 1: Pre-Mainnet (2-4 weeks)
+| Deliverable | Status |
+| :--- | :---: |
+| Functional APK | ⏳ Building |
+| GitHub repo | ✅ [jubilee-pocket](https://github.com/Jubilee-Protocol/jubilee-pocket) |
+| Demo video | ⏳ Record after Seeker test |
+| Pitch deck | ⏳ Use outline in `hackathon/SUBMISSION.md` |
+
+---
+
+## 📋 Phase 4: Pre-Mainnet (2-4 weeks post-hackathon)
+
 | Task | Duration | Status |
 | :--- | :---: | :---: |
-| Devnet deployment | 1 day | ⏳ Pending |
-| Full lifecycle testing | 3 days | ⏳ Pending |
-| Mobile app integration | 1 week | ⏳ Pending |
-| Community beta testing | 1 week | ⏳ Pending |
-| Bug fixes | 1 week | ⏳ Pending |
+| Community beta testing | 1 week | ⏳ |
+| Bug fixes from testing | 1 week | ⏳ |
+| External security audit | 2-3 weeks | ⏳ |
+| Audit remediation | 1 week | ⏳ |
 
-### Phase 2: Security (2-3 weeks)
-| Task | Duration | Cost |
-| :--- | :---: | ---: |
-| External audit (Neodyme/OtterSec) | 2 weeks | $15-50K |
-| Audit remediation | 1 week | — |
-| Re-audit (if needed) | 1 week | $5-10K |
-
-### Phase 3: Mainnet Launch
-| Task | Duration | Cost (SOL) |
-| :--- | :---: | ---: |
-| Program deployment | 1 day | ~10-15 |
-| Initialize VaultState | — | ~0.01 |
-| Transfer mint authority | — | ~0.001 |
-| Initial transactions | — | ~0.5 |
-| **Total Mainnet** | | **~12-16 SOL** |
+### External Audit Options
+| Auditor | Est. Cost | Timeline |
+| :--- | ---: | :---: |
+| [Neodyme](https://neodyme.io/) | $25-50K | 2-3 weeks |
+| [OtterSec](https://osec.io/) | $30-60K | 2-4 weeks |
+| [Zellic](https://zellic.io/) | $40-80K | 3-4 weeks |
+| [sec3](https://sec3.dev/) | $15-30K | 1-2 weeks |
 
 ---
 
-## Mainnet Cost Breakdown
+## 🚀 Phase 5: Mainnet Launch
 
-| Category | Cost (USD) | Notes |
-| :--- | ---: | :--- |
-| **Program Deployment** | $500-1,000 | At $50-70/SOL |
-| **Account Initialization** | $1-5 | PDAs + ATAs |
-| **External Audit** | $15,000-50,000 | Neodyme/OtterSec/Zellic |
-| **Bug Bounty Fund** | $10,000+ | Optional but recommended |
-| **Legal/Compliance** | $5,000+ | If applicable |
-| **Total Estimated** | **$25K-70K** | Conservative range |
+### Deployment Costs
+| Item | SOL | USD (at $50/SOL) |
+| :--- | ---: | ---: |
+| Program deployment (~500KB) | ~10-15 | $500-750 |
+| VaultState PDA | ~0.01 | $0.50 |
+| jUSDi mint creation | ~0.01 | $0.50 |
+| Initial transactions | ~0.5 | $25 |
+| **Total Deploy** | **~12-16** | **$600-800** |
+
+### Pre-Launch Checklist
+- [ ] Remove devnet feature flag (use real Pyth oracle)
+- [ ] Update program ID in Anchor.toml
+- [ ] Generate new keypair for mainnet
+- [ ] Deploy with upgrade authority
+- [ ] Initialize VaultState with mainnet params
+- [ ] Transfer jUSDi mint authority to vault PDA
+- [ ] Set up Squads multisig (2/3 or 3/5)
+
+### Total Mainnet Costs (Conservative)
+| Category | Cost (USD) |
+| :--- | ---: |
+| Program Deployment | $600-800 |
+| External Audit | $15,000-50,000 |
+| Bug Bounty Fund | $10,000+ |
+| Legal/Compliance | $5,000+ |
+| **Total** | **$30K-70K** |
 
 ---
 
-## Post-Mainnet Checklist
+## 📊 Post-Mainnet Operations
 
-- [ ] Monitor program logs (Helius/Triton)
-- [ ] Set up circuit breaker bot
-- [ ] Transition to Squads multisig (2/3 or 3/5)
+- [ ] Monitor with Helius/Triton RPCs
+- [ ] Set up circuit breaker bot (auto-pause on anomalies)
 - [ ] Document incident response plan
-- [ ] Enable Pyth price feed (remove devnet fallback)
-- [ ] Bug bounty program (Immunefi)
+- [ ] Launch bug bounty (Immunefi)
+- [ ] Gradual TVL increase with deposit caps
+
+---
+
+## Quick Commands
+
+### Remove Devnet Feature (For Mainnet)
+```bash
+# Build WITHOUT devnet flag (uses real Pyth oracle)
+cd programs/guardian-vault
+cargo build-sbf
+```
+
+### Deploy to Mainnet
+```bash
+solana config set --url mainnet-beta
+solana program deploy target/deploy/guardian_vault.so
+```
+
+### Initialize Vault on Mainnet
+```bash
+# Run initialization script (TBD)
+anchor run init-mainnet
+```
 
 ---
 
