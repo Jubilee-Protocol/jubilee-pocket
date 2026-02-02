@@ -2,10 +2,11 @@
 
 > **Last Updated**: February 2, 2026
 > **Current Phase**: Devnet Testing
+> **Audit Status**: Jubilee Labs Internal Audit (93/100) ✅
 
 ---
 
-## ✅ Phase 1: Pre-Devnet (COMPLETED)
+## ✅ Phase 1: Development (COMPLETED)
 
 | Task | Status |
 | :--- | :---: |
@@ -14,7 +15,7 @@
 | Pyth SDK integration | ✅ |
 | jUSDi mint authority constraint | ✅ |
 | All tests passing (3/3) | ✅ |
-| Audit score: 93/100 | ✅ |
+| **Jubilee Labs Internal Audit: 93/100** | ✅ |
 | **Devnet Deployment** | ✅ **LIVE** |
 
 ### Deployed Program
@@ -23,35 +24,16 @@
 | **Program ID** | `DwuGR9qYkgYUPxR6jZSkAHdv23YPeqaAwxLAG593L1ar` |
 | **Network** | Devnet |
 | **Deploy Date** | Feb 2, 2026 |
-| **Deploy Cost** | ~3.4 SOL |
 
 ---
 
 ## 🔄 Phase 2: Devnet Testing (CURRENT)
 
-### Immediate Tasks
 - [ ] Initialize VaultState PDA on Devnet
-- [ ] Create test SKR mint
-- [ ] Create jUSDi mint + transfer authority to vault
-- [ ] Build mobile app (Xcode in progress)
+- [ ] Create test SKR + jUSDi mints
+- [ ] Build mobile app
 - [ ] Test full lifecycle on Seeker device
-
-### Mobile App Tasks
-- [ ] Connect React Native to deployed program
-- [ ] Implement MWA transact() with Seed Vault
-- [ ] Build release APK
 - [ ] Record demo video
-
-### Testing Checklist
-| Test | Status |
-| :--- | :---: |
-| Connect Seed Vault | ⏳ |
-| Deposit SKR collateral | ⏳ |
-| Borrow jUSDi | ⏳ |
-| Harvest rewards | ⏳ |
-| Start withdrawal cooldown | ⏳ |
-| Complete withdrawal | ⏳ |
-| Liquidation (if applicable) | ⏳ |
 
 ---
 
@@ -59,92 +41,59 @@
 
 | Deliverable | Status |
 | :--- | :---: |
-| Functional APK | ⏳ Building |
-| GitHub repo | ✅ [jubilee-pocket](https://github.com/Jubilee-Protocol/jubilee-pocket) |
-| Demo video | ⏳ Record after Seeker test |
-| Pitch deck | ⏳ Use outline in `hackathon/SUBMISSION.md` |
+| Functional APK | ⏳ |
+| GitHub repo | ✅ |
+| Demo video | ⏳ |
+| Pitch deck | ⏳ |
 
 ---
 
-## 📋 Phase 4: Pre-Mainnet (2-4 weeks post-hackathon)
+## 🚀 Phase 4: Mainnet Beta Launch
 
-| Task | Duration | Status |
-| :--- | :---: | :---: |
-| Community beta testing | 1 week | ⏳ |
-| Bug fixes from testing | 1 week | ⏳ |
-| External security audit | 2-3 weeks | ⏳ |
-| Audit remediation | 1 week | ⏳ |
-
-### External Audit Options
-| Auditor | Est. Cost | Timeline |
-| :--- | ---: | :---: |
-| [Neodyme](https://neodyme.io/) | $25-50K | 2-3 weeks |
-| [OtterSec](https://osec.io/) | $30-60K | 2-4 weeks |
-| [Zellic](https://zellic.io/) | $40-80K | 3-4 weeks |
-| [sec3](https://sec3.dev/) | $15-30K | 1-2 weeks |
-
----
-
-## 🚀 Phase 5: Mainnet Launch
-
-### Deployment Costs
-| Item | SOL | USD (at $50/SOL) |
-| :--- | ---: | ---: |
-| Program deployment (~500KB) | ~10-15 | $500-750 |
-| VaultState PDA | ~0.01 | $0.50 |
-| jUSDi mint creation | ~0.01 | $0.50 |
-| Initial transactions | ~0.5 | $25 |
-| **Total Deploy** | **~12-16** | **$600-800** |
+> **Strategy**: Launch as public beta with Jubilee Labs internal audit (93/100). No external audit required for beta phase.
 
 ### Pre-Launch Checklist
+- [ ] Complete Devnet testing
 - [ ] Remove devnet feature flag (use real Pyth oracle)
-- [ ] Update program ID in Anchor.toml
-- [ ] Generate new keypair for mainnet
-- [ ] Deploy with upgrade authority
+- [ ] Generate mainnet keypair
+- [ ] Deploy program
 - [ ] Initialize VaultState with mainnet params
 - [ ] Transfer jUSDi mint authority to vault PDA
-- [ ] Set up Squads multisig (2/3 or 3/5)
+- [ ] Set up Squads multisig (2/3)
 
-### Total Mainnet Costs (Conservative)
-| Category | Cost (USD) |
-| :--- | ---: |
-| Program Deployment | $600-800 |
-| External Audit | $15,000-50,000 |
-| Bug Bounty Fund | $10,000+ |
-| Legal/Compliance | $5,000+ |
-| **Total** | **$30K-70K** |
+### Mainnet Deployment Costs
+| Item | SOL | USD (at $50/SOL) |
+| :--- | ---: | ---: |
+| Program deployment | ~10-15 | $500-750 |
+| VaultState PDA | ~0.01 | $0.50 |
+| jUSDi mint | ~0.01 | $0.50 |
+| Transactions | ~0.5 | $25 |
+| **Total** | **~12-16** | **$600-800** |
 
 ---
 
-## 📊 Post-Mainnet Operations
+## 📊 Post-Mainnet Beta
 
 - [ ] Monitor with Helius/Triton RPCs
-- [ ] Set up circuit breaker bot (auto-pause on anomalies)
-- [ ] Document incident response plan
-- [ ] Launch bug bounty (Immunefi)
+- [ ] Set up circuit breaker bot
 - [ ] Gradual TVL increase with deposit caps
+- [ ] Community feedback collection
+- [ ] Iterate based on usage
 
 ---
 
 ## Quick Commands
 
-### Remove Devnet Feature (For Mainnet)
+### Build for Mainnet (Remove Devnet Flag)
 ```bash
-# Build WITHOUT devnet flag (uses real Pyth oracle)
 cd programs/guardian-vault
-cargo build-sbf
+cargo build-sbf  # Without --features devnet
 ```
 
 ### Deploy to Mainnet
 ```bash
 solana config set --url mainnet-beta
 solana program deploy target/deploy/guardian_vault.so
-```
-
-### Initialize Vault on Mainnet
-```bash
-# Run initialization script (TBD)
-anchor run init-mainnet
 ```
 
 ---

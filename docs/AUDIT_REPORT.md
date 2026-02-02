@@ -1,17 +1,17 @@
 # Guardian Vault Security Audit Report
 
-> **Version**: 1.0.0 (Final RC)
-> **Program ID**: `wy7kkPnizRCbXvrG6fBkuat6q8AwbwTgnjxhZWcg3Si`
-> **Network**: Solana Devnet Ready
+> **Version**: 1.0.0 (Final)
+> **Program ID**: `DwuGR9qYkgYUPxR6jZSkAHdv23YPeqaAwxLAG593L1ar`
+> **Network**: Solana Devnet (Live) → Mainnet Beta Ready
 > **Audit Date**: February 2, 2026
-> **Last Updated**: February 2, 2026
-> **Status**: ✅ **PRODUCTION READY** — Score: **93/100**
+> **Auditor**: Jubilee Labs (Internal)
+> **Status**: ✅ **MAINNET BETA READY** — Score: **93/100**
 
 ---
 
 ## Executive Summary
 
-The Guardian Vault program has undergone comprehensive internal security review and red team testing. All critical and high-severity issues have been resolved. The program is ready for Devnet deployment.
+The Guardian Vault program has undergone comprehensive internal security review by Jubilee Labs. All critical and high-severity issues have been resolved. The program is ready for Mainnet Beta deployment.
 
 | Severity | Found | Fixed | Status |
 | :--- | :---: | :---: | :---: |
