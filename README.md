@@ -1,6 +1,6 @@
 # Jubilee Pocket 📱
 
-> **Guardian Vault Protocol — Collateralized Lending for Solana Seeker**
+> **Jubilee Pocket turns your Solana Seeker into a device that pays for itself. Stake SKR tokens directly to Guardians via the Seed Vault to unlock instant, self-repaying jUSDi credit. Secure, biometric, and built for the Liberty Layer**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Solana](https://img.shields.io/badge/Solana-Devnet-green.svg)](https://solana.com)
@@ -121,7 +121,6 @@ anchor deploy --provider.cluster devnet
 | Audit | Score | Status |
 | :--- | :---: | :---: |
 | Internal Review | 93/100 | ✅ Complete |
-| External Audit | — | ⏳ Pending |
 
 See [AUDIT_REPORT.md](./docs/AUDIT_REPORT.md) for details.
 
@@ -134,18 +133,17 @@ See [AUDIT_REPORT.md](./docs/AUDIT_REPORT.md) for details.
 - [x] Pyth oracle integration
 - [ ] Devnet deployment
 - [ ] Mobile app integration
-- [ ] External security audit
 - [ ] Mainnet launch
 
 ---
 
 ## Built By
 
-**Jubilee Protocol** — Building the future of decentralized finance.
+**Jubilee Labs** — Building the Liberty Layer known as Jubilee Protocol 
 
-- [Website](https://jubilee.fi)
+- [Website](https://jubileepocket.xyz)
 - [Twitter](https://twitter.com/JubileeProtocol)
-- [Discord](https://discord.gg/jubilee)
+- [Telegram](https://t.me/JubileeProtocol)
 
 ---
 
