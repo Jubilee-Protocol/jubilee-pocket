@@ -25,12 +25,12 @@ Jubilee Pocket is a mobile-first lending protocol designed for the **Solana Seek
 
 ## Program Addresses
 
-### Devnet (Pending Deployment)
+### Devnet (Live ✅)
 | Program | Address |
 | :--- | :--- |
-| Guardian Vault | `wy7kkPnizRCbXvrG6fBkuat6q8AwbwTgnjxhZWcg3Si` |
-| Mock SKR Mint | TBD |
-| jUSDi Mint | TBD |
+| Guardian Vault | `DwuGR9qYkgYUPxR6jZSkAHdv23YPeqaAwxLAG593L1ar` |
+| Mock SKR Mint | TBD (created per test) |
+| jUSDi Mint | TBD (created per test) |
 
 ---
 
