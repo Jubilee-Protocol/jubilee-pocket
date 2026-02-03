@@ -15,9 +15,13 @@
 ## App Screenshots
 
 <p align="center">
-  <img src="./assets/screenshots/home-screen.png" alt="Home Screen" width="280"/>
-  &nbsp;&nbsp;&nbsp;
-  <img src="./assets/screenshots/tutorial-screen.png" alt="Tutorial" width="280"/>
+  <img src="./assets/screenshots/welcome.png" alt="Welcome" width="200"/>
+  &nbsp;
+  <img src="./assets/screenshots/deposit.png" alt="Deposit" width="200"/>
+  &nbsp;
+  <img src="./assets/screenshots/borrow.png" alt="Borrow" width="200"/>
+  &nbsp;
+  <img src="./assets/screenshots/auto-repay.png" alt="Auto-Repay" width="200"/>
 </p>
 
 ---
