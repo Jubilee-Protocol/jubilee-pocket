@@ -6,6 +6,20 @@
 [![Solana](https://img.shields.io/badge/Solana-Devnet-green.svg)](https://solana.com)
 [![Anchor](https://img.shields.io/badge/Anchor-0.28.0-blueviolet.svg)](https://www.anchor-lang.com/)
 
+<p align="center">
+  <img src="./assets/logo.png" alt="Jubilee Pocket" width="120"/>
+</p>
+
+---
+
+## App Screenshots
+
+<p align="center">
+  <img src="./assets/screenshots/home-screen.png" alt="Home Screen" width="280"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="./assets/screenshots/tutorial-screen.png" alt="Tutorial" width="280"/>
+</p>
+
 ---
 
 ## Overview
@@ -18,6 +32,7 @@ Jubilee Pocket is a mobile-first lending protocol designed for the **Solana Seek
 - 📈 **Yield Harvesting** — Automatically repays debt with staking rewards
 - 🔐 **Seed Vault Integration** — Native hardware security on Seeker
 - ⚡ **Pyth Oracle** — Real-time price feeds for accurate LTV
+- 🔄 **Jupiter Swaps** — Swap jUSDi ↔ USDC directly in-app
 - 🛑 **Emergency Pause** — Circuit breaker for admin control
 - 📱 **React Native App** — Mobile-first experience
 
@@ -29,8 +44,10 @@ Jubilee Pocket is a mobile-first lending protocol designed for the **Solana Seek
 | Program | Address |
 | :--- | :--- |
 | Guardian Vault | `DwuGR9qYkgYUPxR6jZSkAHdv23YPeqaAwxLAG593L1ar` |
-| Mock SKR Mint | TBD (created per test) |
-| jUSDi Mint | TBD (created per test) |
+| SKR Mint (Demo) | `SKR1111111111111111111111111111111111111111` |
+| jUSDi Mint (Demo) | `jUSD111111111111111111111111111111111111111` |
+
+> **Note**: Demo mints are used for testing. Production mints will be deployed with mainnet launch.
 
 ---
 
@@ -45,12 +62,16 @@ jubilee-pocket/
 │           ├── state/
 │           └── errors.rs
 ├── mobile/                  # React Native app
+├── assets/                  # Logo and screenshots
 ├── tests/                   # Integration tests
 ├── docs/
 │   ├── AUDIT_REPORT.md
 │   ├── RED_TEAM_AUDIT.md
-│   ├── INTEGRATION_GUIDE.md
-│   └── DEVNET_TO_MAINNET.md
+│   ├── ONE_PAGER.md
+│   ├── COPYRIGHT.md
+│   └── PRIVACY_POLICY.md
+├── hackathon/
+│   └── apk/                 # Android APK for submission
 └── Anchor.toml
 ```
 
@@ -137,7 +158,7 @@ See [AUDIT_REPORT.md](./docs/AUDIT_REPORT.md) for details.
   - [x] SwapScreen (Jupiter API)
   - [x] Push notifications
   - [x] Demo mode for testing
-- [ ] Mainnet launch
+- [ ] Mainnet launch (February 2026)
 - [ ] Orca pool creation (jUSDi/USDC)
 
 ---
