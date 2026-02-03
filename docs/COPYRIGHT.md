@@ -18,7 +18,7 @@ This software is released under the MIT License. See [LICENSE](./LICENSE) for fu
 
 - **Jubilee Pocket** is a trademark of Jubilee Labs LLC
 - **Jubilee Protocol** is a trademark of Jubilee Labs LLC
-- **jUSDi**, **jSOLi**, **SKR** are tokens associated with Jubilee Protocol
+- **jUSDi** and **jSOLi** are tokens associated with Jubilee Protocol.
 
 ## Third-Party Components
 
@@ -35,6 +35,6 @@ Built with ❤️ by Jubilee Labs for the Solana ecosystem.
 
 **Jubilee Labs LLC**  
 https://jubileelabs.xyz  
-contact@jubileelabs.xyz
+contact@jubileeprotocol.xyz
 
 © 2026 Jubilee Labs LLC
