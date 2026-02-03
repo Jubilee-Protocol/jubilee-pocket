@@ -59,7 +59,7 @@ We may update this Privacy Policy. Changes will be posted in the App and this do
 ## Contact
 
 For privacy questions, contact:
-- **Email**: privacy@jubileelabs.xyz
+- **Email**: contact@jubileeprotocol.xyz
 - **Website**: https://jubileelabs.xyz
 
 ---
