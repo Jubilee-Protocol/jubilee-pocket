@@ -3,7 +3,7 @@
 ## Your Seeker Pays for Itself
 
 <p align="center">
-  <img src="./mobile/src/assets/jubilee-logo-pink.png" alt="Jubilee Pocket" width="120"/>
+  <img src="https://jubileeprotocol.xyz/assets/images/image02.png?v=c8b96d2a" alt="Jubilee Pocket" width="120"/>
 </p>
 
 ---
