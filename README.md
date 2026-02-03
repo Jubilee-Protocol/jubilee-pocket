@@ -131,9 +131,14 @@ See [AUDIT_REPORT.md](./docs/AUDIT_REPORT.md) for details.
 - [x] Core program development
 - [x] Security audit (93/100)
 - [x] Pyth oracle integration
-- [ ] Devnet deployment
-- [ ] Mobile app integration
+- [x] Devnet deployment
+- [x] Mobile app integration (Jubilee Pocket)
+  - [x] React Native with MWA support
+  - [x] SwapScreen (Jupiter API)
+  - [x] Push notifications
+  - [x] Demo mode for testing
 - [ ] Mainnet launch
+- [ ] Orca pool creation (jUSDi/USDC)
 
 ---
 

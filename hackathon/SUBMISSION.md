@@ -1,158 +1,169 @@
-# MONOLITH Hackathon Submission
+# Solana Mobile Hackathon 2026 Submission
 
-> **Team**: Jubilee Protocol
-> **Project**: Jubilee Pocket
-> **Category**: Mobile
-> **Deadline**: [TBD]
-
----
-
-## Submission Requirements
-
-### 1. The APK ⏳
-- [ ] Build release APK: `cd mobile/android && ./gradlew assembleRelease`
-- [ ] Test on Seeker device
-- [ ] Upload to submission portal
-
-### 2. GitHub Repo ✅
-- [x] **Live**: https://github.com/Jubilee-Protocol/jubilee-pocket
-- [x] Source code committed
-- [x] README with documentation
-- [x] MIT License
-
-### 3. Demo Video ⏳
-- [ ] Record full user flow (2-3 min)
-- [ ] Show: Connect → Deposit → Borrow → Harvest → Withdraw
-- [ ] Highlight Seed Vault integration
-- [ ] Upload to YouTube/Loom
-
-### 4. Pitch Deck ⏳
-- [ ] Create slides (see outline below)
-- [ ] Export to PDF
+> **Team**: Jubilee Labs  
+> **Project**: Jubilee Pocket  
+> **Category**: Mobile dApp  
+> **Submitted**: February 2026
 
 ---
 
-## Judging Criteria
+## 📱 Project Overview
 
-| Criteria | Weight | Our Approach |
-| :--- | :---: | :--- |
-| **Stickiness & PMF** | 25% | Daily harvest rewards, SKR holder utility |
-| **User Experience** | 25% | Mobile-native, biometric auth, clean UI |
-| **Innovation/X Factor** | 25% | First SKR-collateralized CDP on Solana |
-| **Presentation & Demo** | 25% | Polished video, clear value prop |
+**Jubilee Pocket** is a mobile-first self-repaying lending protocol for Solana Seeker. Users deposit SKR tokens as collateral and borrow jUSDi stablecoins — with yield automatically paying down debt over time.
 
-> *"Do not forsake the pretty things."*
-
----
-
-## Technical Requirements Checklist
-
-- [x] **Functional APK** — React Native app ready to build
-- [x] **Solana Mobile Stack** — MWA protocol integrated
-- [x] **Mobile Wallet Adapter** — @solana-mobile packages installed
-- [x] **Built for Mobile** — Native React Native (not PWA/port)
-- [x] **Meaningful Solana Interaction** — On-chain CDP with Pyth oracle
+### Key Innovation
+First SKR-collateralized CDP (Collateralized Debt Position) on Solana with:
+- 🔐 Seed Vault hardware security integration
+- 📈 Auto-repaying loans via yield harvesting
+- 🔄 Jupiter-powered token swaps
+- 📲 Push notifications for LTV alerts
 
 ---
 
-## Pitch Deck Outline
+## ✅ Submission Checklist
 
-### Slide 1: Title
-> **Jubilee Pocket**
-> *Collateralized Lending for Solana Seeker*
+| Requirement | Status | Details |
+|-------------|--------|---------|
+| **Android APK** | ✅ Ready | `cd mobile/android && ./gradlew assembleRelease` |
+| **GitHub Repo** | ✅ Live | [Jubilee-Protocol/jubilee-pocket](https://github.com/Jubilee-Protocol/jubilee-pocket) |
+| **Demo Video** | ⏳ Record | See script below |
+| **Pitch Deck** | ⏳ Create | `hackathon/pitch-deck.pdf` |
 
-### Slide 2: Problem
-- SKR holders have locked value
-- No native mobile lending on Seeker
-- DeFi UX is intimidating on mobile
+---
 
-### Slide 3: Solution
-- Deposit SKR → Borrow jUSDi (55% LTV)
-- Yield auto-repays debt
-- Seed Vault = hardware-grade security
+## 📊 Judging Criteria Alignment
 
-### Slide 4: How It Works
+### 🔥 Stickiness & PMF (25%)
+- **Daily Engagement**: Harvest rewards button encourages daily check-ins
+- **Push Notifications**: LTV warnings and harvest completion alerts
+- **SKR Holder Utility**: Unlock liquidity from staked positions
+
+### 🎨 User Experience (25%)
+- **Native Mobile Design**: Built with React Native from ground up
+- **Jubilee Branding**: Consistent pink theme with custom icons/emojis
+- **Demo Mode**: Test flows without connecting a wallet
+- **Scroll-optimized**: All screens properly scrollable
+
+### 💡 Innovation / X-Factor (25%)
+- **First of its Kind**: No other SKR-backed lending on Solana
+- **Self-Repaying**: Yield automatically reduces debt
+- **Jupiter Integration**: Instant jUSDi → USDC swaps
+- **Pyth Oracle**: Real-time price feeds for accurate LTV
+
+### 🎤 Presentation & Demo (25%)
+- **Clear Value Prop**: "Your Seeker pays for itself"
+- **Polished Video**: See demo script below
+- **Complete Submission**: All materials included
+
+---
+
+## 🛠️ Technical Stack
+
+| Component | Technology |
+|-----------|------------|
+| Mobile App | React Native 0.73 |
+| Wallet | Mobile Wallet Adapter (MWA) |
+| Smart Contract | Anchor 0.28.0 |
+| Oracle | Pyth Network |
+| Swaps | Jupiter Aggregator API |
+| Network | Solana Devnet (live) |
+
+### Program Addresses (Devnet)
 ```
-[Deposit SKR] → [Pyth Price] → [Mint jUSDi] → [Harvest Rewards] → [Repay Debt]
+Guardian Vault: DwuGR9qYkgYUPxR6jZSkAHdv23YPeqaAwxLAG593L1ar
 ```
 
-### Slide 5: Demo
-*[Insert demo video or GIF]*
+---
 
-### Slide 6: Stickiness
-- Daily reward harvesting
-- Debt management gamification
-- Push notifications for LTV alerts
+## 🎬 Demo Video Script (2-3 min)
 
-### Slide 7: Technical Architecture
-```
-Mobile App (React Native)
-    ↓
-Mobile Wallet Adapter
-    ↓
-Seed Vault (Seeker)
-    ↓
-Guardian Vault (Solana Program)
-    ↓
-Pyth Oracle
-```
+### Scene 1: Introduction (20s)
+- Show Jubilee Pocket app icon on home screen
+- "Jubilee Pocket — self-repaying loans for Solana Seeker"
 
-### Slide 8: Program Details
-| Metric | Value |
-| :--- | :--- |
-| Program ID | `DwuGR9qYkgYUPxR6jZSkAHdv23YPeqaAwxLAG593L1ar` |
-| Network | Devnet (Live) |
-| Audit Score | 93/100 |
-| LTV | 55% base, 60% SKR holders |
+### Scene 2: Connect Wallet (20s)
+- Open app → Tap "Connect Wallet"
+- Show Seed Vault authorization
+- Or demo mode for testing
 
-### Slide 9: Why Seeker?
-- Seed Vault = institutional-grade custody
-- On-device biometrics
-- dApp Store native distribution
-- Target audience: SKR holders
+### Scene 3: Deposit Collateral (30s)
+- Navigate to Deposit screen
+- Enter SKR amount
+- Show transaction signing with MWA
+- Collateral appears in VaultCard
 
-### Slide 10: Roadmap
-- [x] Smart contract (93/100 audit)
-- [x] Devnet deployment
-- [ ] Hackathon demo
-- [ ] External audit
-- [ ] Mainnet launch
+### Scene 4: Borrow jUSDi (30s)
+- Navigate to Borrow screen
+- Show LTV slider (55% max)
+- Review transaction preview
+- jUSDi minted to wallet
 
-### Slide 11: Team
-**Jubilee Protocol**
-- Building the future of on-chain finance
+### Scene 5: Swap jUSDi (20s)
+- Navigate to Swap screen
+- Swap jUSDi → USDC
+- Show Jupiter quote with price impact
 
-### Slide 12: Ask
-- Feedback from Solana Mobile team
-- Integration support for dApp Store
-- Community testing
+### Scene 6: Harvest & Repay (20s)
+- Show yield accumulation
+- Tap "Harvest" to auto-repay
+- Debt reduced by harvest amount
+
+### Scene 7: Notifications (10s)
+- Go to Settings → Test notifications
+- Show harvest and LTV alerts
+
+### Scene 8: Conclusion (10s)
+- "Jubilee Pocket — making your Seeker pay for itself"
+- Show GitHub repo
 
 ---
 
-## Files to Submit
+## 📁 Files Included
 
-| File | Status | Location |
-| :--- | :---: | :--- |
-| `jubilee-pocket.apk` | ⏳ | `mobile/android/app/build/outputs/apk/release/` |
-| GitHub URL | ✅ | https://github.com/Jubilee-Protocol/jubilee-pocket |
-| Demo Video | ⏳ | YouTube/Loom link |
-| Pitch Deck | ⏳ | `hackathon/pitch-deck.pdf` |
+```
+hackathon/
+├── SUBMISSION.md       # This file
+├── TOOLBOX.md          # SDK/libraries used
+└── pitch-deck.pdf      # Presentation (to create)
+
+mobile/
+├── android/app/build/outputs/apk/release/
+│   └── app-release.apk # Built APK
+└── src/
+    ├── screens/        # All UI screens
+    ├── components/     # Reusable components
+    └── services/       # NotificationService
+```
 
 ---
 
-## Quick Commands
+## 🚀 Build Commands
 
 ```bash
-# Build release APK
+# Build Android APK
 cd mobile/android
 ./gradlew assembleRelease
 
-# APK location
-ls -la app/build/outputs/apk/release/
+# APK Location
+ls mobile/android/app/build/outputs/apk/release/
 
 # Install on Seeker
-adb install app/build/outputs/apk/release/app-release.apk
+adb install mobile/android/app/build/outputs/apk/release/app-release.apk
 ```
+
+---
+
+## 👥 Team
+
+**Jubilee Labs** — Building the Liberty Layer
+
+---
+
+## 📞 Contact
+
+- Website: [jubileelabs.xyz](https://jubileelabs.xyz)
+- Twitter: [@JubileeProtocol](https://twitter.com/JubileeProtocol)
+- Telegram: [t.me/JubileeProtocol](https://t.me/JubileeProtocol)
 
 ---
 
