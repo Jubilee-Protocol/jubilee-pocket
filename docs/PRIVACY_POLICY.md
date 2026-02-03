@@ -54,12 +54,12 @@ Jubilee Pocket is not intended for users under 18 years of age. We do not knowin
 
 ## Changes to This Policy
 
-We may update this Privacy Policy. Changes will be posted in the App and this document.
+We may update this Privacy Policy. Changes will be posted in the dapp and this document.
 
 ## Contact
 
 For privacy questions, contact:
-- **Email**: contact@jubileeprotocol.xyz
+- **Email**: contact@jubileelabs.xyz
 - **Website**: https://jubileelabs.xyz
 
 ---
