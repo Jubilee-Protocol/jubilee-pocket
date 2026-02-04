@@ -34,4 +34,6 @@ pub enum VaultError {
     NameTooLong,
     #[msg("Cooldown already started")]
     CooldownAlreadyStarted,
+    #[msg("This instruction is only available on devnet")]
+    DevnetOnly,
 }

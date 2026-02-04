@@ -32,8 +32,17 @@ pub mod guardian_vault {
         )
     }
 
+    /// DEV-ONLY: Mints mock SKR tokens for testing. Returns error on mainnet builds.
+    #[allow(unused_variables)]
     pub fn mint_mock_skr(ctx: Context<MintMockSkr>, amount: u64) -> anchor_lang::Result<()> {
-        instructions::mint_mock_skr::handler(ctx, amount)
+        #[cfg(not(feature = "devnet"))]
+        {
+            return Err(crate::errors::VaultError::DevnetOnly.into());
+        }
+        #[cfg(feature = "devnet")]
+        {
+            instructions::mint_mock_skr::handler(ctx, amount)
+        }
     }
 
     pub fn deposit_skr_and_borrow(ctx: Context<DepositSkrAndBorrow>, skr_amount: u64) -> anchor_lang::Result<()> {

@@ -98,7 +98,6 @@ This document outlines adversarial attack vectors and stress tests for the Guard
 3. **Before Mainnet**:
    - Transition to Squads multisig
    - Add circuit breaker bot
-   - Commission formal audit from Neodyme/OtterSec
 
 ---
 

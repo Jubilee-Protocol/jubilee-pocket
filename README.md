@@ -65,7 +65,15 @@ jubilee-pocket/
 │           ├── instructions/
 │           ├── state/
 │           └── errors.rs
-├── mobile/                  # React Native app
+├── mobile/                  # React Native app (Jubilee Pocket)
+│   ├── App.tsx              # Main app entry
+│   ├── src/
+│   │   ├── screens/         # 7 screens (Home, Deposit, Borrow, etc.)
+│   │   ├── components/      # Reusable UI components
+│   │   ├── services/        # NotificationService, etc.
+│   │   └── utils/
+│   ├── android/             # Android build config
+│   └── ios/                 # iOS build config
 ├── assets/                  # Logo and screenshots
 ├── tests/                   # Integration tests
 ├── docs/
