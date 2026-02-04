@@ -119,6 +119,19 @@ solana airdrop 5
 anchor deploy --provider.cluster devnet
 ```
 
+### Run the Mobile App
+
+The mobile app requires the Android SDK and a Solana Seeker (or emulator).
+
+```bash
+cd mobile
+yarn install
+# Ensure you have an Android Emulator running or device connected
+yarn android
+```
+
+> ⚠️ **Hardware Requirement**: This application relies on the Solana Seed Vault. Full functionality requires a **Solana Seeker** or **Saga** device. Standard Android emulators may fail at the "Connect Wallet" step.
+
 ---
 
 ## How It Works
