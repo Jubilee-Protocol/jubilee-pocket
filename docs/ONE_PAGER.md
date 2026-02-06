@@ -83,7 +83,7 @@ Your staking rewards automatically pay down your debt. Your loan shrinks while y
 - [x] Security audit (93/100)
 - [x] Devnet deployment
 - [x] Mobile app build
-- [ ] **Mainnet launch** (Feb 7, 2026)
+- [ ] **Mainnet launch** (Early February 2026)
 - [ ] dApp Store submission
 - [ ] Expanded collateral types
 
