@@ -10,7 +10,9 @@
 
 ## What is Jubilee Pocket?
 
-Jubilee Pocket is a **self-repaying lending protocol** built exclusively for the **Solana Seeker**. It transforms your device into a revenue-generating asset by letting you borrow against your staked tokens while yield automatically pays down your debt.
+Jubilee Pocket is a **self-repaying lending protocol** built exclusively for the **Solana Seeker**. It's not a wallet — it's a DeFi app that transforms your device into a revenue-generating asset.
+
+**Deposit. Borrow. Relax.** Your staking yield automatically pays down your debt while you hold.
 
 ---
 
@@ -39,10 +41,10 @@ Your staking rewards automatically pay down your debt. Your loan shrinks while y
 
 | Feature | Description |
 |---------|-------------|
-| 🔐 **Seed Vault Security** | Hardware-grade custody on Solana Seeker |
+| 🏦 **DeFi Protocol** | Not a wallet — a lending protocol you control |
 | 📈 **Self-Repaying Loans** | Yield automatically reduces your debt |
-| 🔄 **Instant Swaps** | Convert jUSDi ↔ USDC via Jupiter |
-| 📱 **Mobile-First** | Built natively for Seeker |
+| � **Seed Vault Compatible** | Works with Seeker's hardware security |
+| �🔄 **Instant Swaps** | Convert jUSDi ↔ USDC via Jupiter |
 | ⚡ **Real-Time Oracles** | Pyth price feeds for accurate LTV |
 | 🔔 **Smart Alerts** | Push notifications for LTV warnings |
 
@@ -83,7 +85,7 @@ Your staking rewards automatically pay down your debt. Your loan shrinks while y
 - [x] Security audit (93/100)
 - [x] Devnet deployment
 - [x] Mobile app build
-- [ ] **Mainnet launch** (Early February 2026)
+- [ ] **Mainnet launch** (Feb 7, 2026)
 - [ ] dApp Store submission
 - [ ] Expanded collateral types
 
