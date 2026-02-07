@@ -7,6 +7,9 @@ skip-lint = false
 [programs.localnet]
 guardian_vault = "wy7kkPnizRCbXvrG6fBkuat6q8AwbwTgnjxhZWcg3Si"
 
+[programs.devnet]
+guardian_vault = "wy7kkPnizRCbXvrG6fBkuat6q8AwbwTgnjxhZWcg3Si"
+
 [registry]
 url = "https://api.apr.dev"
 
@@ -16,3 +19,5 @@ wallet = "/Users/cmpgfb/.config/solana/id.json"
 
 [scripts]
 test = "yarn run mocha -t 1000000 tests/"
+init-guardians = "npx ts-node scripts/init_mainnet_guardians.ts"
+
