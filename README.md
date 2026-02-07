@@ -28,7 +28,7 @@
 
 ## Overview
 
-Jubilee Pocket is a mobile-first lending protocol designed for the **Solana Seeker** device. Users deposit **Stakehouse Keeper Receipts (SKR)** as collateral and borrow **jUSDi** (Jubilee USD Index) against their holdings with up to **55% LTV** — plus a holder bonus for larger positions.
+Jubilee Pocket is a mobile-first lending protocol designed for the **Solana Seeker** device. Users deposit **Seeker Rewards (SKR)** as collateral and borrow **jUSDi** (Jubilee USD Index) against their holdings with up to **55% LTV** — plus a holder bonus for larger positions.
 
 ### Key Features
 

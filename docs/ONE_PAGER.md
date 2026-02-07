@@ -27,7 +27,7 @@ Jubilee Pocket is a **self-repaying lending protocol** built exclusively for the
 ```
 
 ### Step 1: Deposit
-Stake your SKR (Stakehouse Keeper Receipts) as collateral in the Guardian Vault.
+Stake your SKR (Seeker) as collateral in the Guardian Vault.
 
 ### Step 2: Borrow
 Instantly mint jUSDi stablecoins at up to 55% LTV. Swap to USDC via Jupiter if needed.
@@ -63,7 +63,7 @@ Your staking rewards automatically pay down your debt. Your loan shrinks while y
 
 | Token | Purpose |
 |-------|---------|
-| **SKR** | Collateral (Stakehouse Keeper Receipts) |
+| **SKR** | Collateral (Seeker Rewards) |
 | **jUSDi** | Borrowed stablecoin (Jubilee USD Index) |
 | **SOL** | Native gas + staking rewards |
 
