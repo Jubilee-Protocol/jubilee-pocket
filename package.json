@@ -5,7 +5,10 @@
     },
     "dependencies": {
         "@coral-xyz/anchor": "^0.29.0",
-        "@solana/spl-token": "^0.4.14"
+        "@kamino-finance/klend-sdk": "^7.3.18",
+        "@metaplex-foundation/mpl-token-metadata": "^2.13.0",
+        "@solana/spl-token": "^0.4.14",
+        "@solana/web3.js": "^1.98.4"
     },
     "devDependencies": {
         "chai": "^4.3.4",

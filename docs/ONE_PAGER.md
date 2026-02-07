@@ -114,16 +114,18 @@ Your staking rewards automatically pay down your debt. Your loan shrinks while y
 
 - **GitHub**: [github.com/Jubilee-Protocol/jubilee-pocket](https://github.com/Jubilee-Protocol/jubilee-pocket)
 - **Website**: [jubileelabs.xyz](https://jubileelabs.xyz)
-- **Twitter**: [@JubileeProtocol](https://twitter.com/JubileeProtocol)
+- **X**: [@JubileeProtocol](https://X.com/JubileeProtocol)
 
 ---
 
 ## Contact
 
-**Jubilee Labs LLC**  
-contact@jubileelabs.xyz
+**Jubilee Labs**  
+contact@jubileeprotocol.xyz
 
 ---
 
-© 2026 Jubilee Labs LLC. All rights reserved.  
+© 2026 Jubilee Labs. All rights reserved.  
 Licensed under [MIT License](./LICENSE)
+
+All glory to Jesus Christ, our Lord and Savior. Amen.
