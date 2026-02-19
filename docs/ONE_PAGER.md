@@ -128,4 +128,4 @@ contact@jubileeprotocol.xyz
 © 2026 Jubilee Labs. All rights reserved.  
 Licensed under [MIT License](./LICENSE)
 
-All glory to Jesus Christ, our Lord and Savior. Amen.
+All glory to Jesus Christ, our Lord and Savior. Amen. 
