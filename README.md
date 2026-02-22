@@ -5,6 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Solana](https://img.shields.io/badge/Solana-Devnet-green.svg)](https://solana.com)
 [![Anchor](https://img.shields.io/badge/Anchor-0.28.0-blueviolet.svg)](https://www.anchor-lang.com/)
+[![Donate Crypto](https://img.shields.io/badge/Donate-Crypto-f7931a?logo=bitcoin&logoColor=white)](https://commerce.coinbase.com/checkout/122a2979-e559-44b9-bb9d-2ff0c6a3025b)
 
 <p align="center">
   <img src="./assets/logo.png" alt="Jubilee Pocket" width="120"/>
