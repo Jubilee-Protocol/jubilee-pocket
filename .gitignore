@@ -22,6 +22,10 @@ Thumbs.db
 .env.local
 .env.*.local
 
+# Signing keys
+*.keystore
+!debug.keystore
+
 # Test outputs
 test-ledger/
 
