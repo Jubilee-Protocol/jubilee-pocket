@@ -69,6 +69,10 @@ pub mod guardian_vault {
         instructions::admin::emergency_pause(ctx)
     }
 
+    pub fn unpause(ctx: Context<AdminConfig>) -> anchor_lang::Result<()> {
+        instructions::admin::unpause(ctx)
+    }
+
     pub fn add_guardian(ctx: Context<AddGuardian>, guardian_pubkey: Pubkey, name: String, commission_bps: u16) -> anchor_lang::Result<()> {
         instructions::admin::add_guardian(ctx, guardian_pubkey, name, commission_bps)
     }

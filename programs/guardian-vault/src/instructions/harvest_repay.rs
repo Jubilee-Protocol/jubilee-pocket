@@ -119,9 +119,9 @@ pub fn handler(ctx: Context<HarvestRepay>) -> Result<()> {
     // For now, let's use a fixed rate of $10 for harvest simulation to save complexity, 
     // or add Pyth account to context.
     // I'll skip oracle for harvest_repay in this pass to keep it simple, or user can update.
-    // Let's use 10 USD per SKR for Devnet simulation.
+    // MEDIUM-05: Devnet simulation — $10/SKR. TODO(MAINNET): Replace with Pyth oracle lookup.
     let simulated_price = 10u64;
-    let debt_reduction = net_rewards.checked_mul(simulated_price).unwrap();
+    let debt_reduction = net_rewards.checked_mul(simulated_price).ok_or(VaultError::MathOverflow)?;
     
     // Burn jUSDi from vault (assuming vault has some or we just reduce the user debt number?)
     // Real flow: Swap SKR -> USDC, Buy jUSDi -> Burn.

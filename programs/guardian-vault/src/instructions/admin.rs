@@ -50,6 +50,13 @@ pub fn emergency_pause(ctx: Context<AdminConfig>) -> Result<()> {
     Ok(())
 }
 
+// HIGH-05 FIX: Allow admin to unpause the vault
+pub fn unpause(ctx: Context<AdminConfig>) -> Result<()> {
+    ctx.accounts.vault_state.paused = false;
+    msg!("Vault unpaused at {}", Clock::get()?.unix_timestamp);
+    Ok(())
+}
+
 pub fn update_oracle(ctx: Context<AdminConfig>, new_price_feed: Pubkey) -> Result<()> {
     // Basic validation could check if account exists, but for now just update key
     ctx.accounts.vault_state.skr_price_feed = new_price_feed;
@@ -64,6 +71,9 @@ pub fn add_guardian(ctx: Context<AddGuardian>, guardian_pubkey: Pubkey, name: St
     // MEDIUM-04 FIX: Limit name length
     require!(name.len() <= 32, VaultError::NameTooLong);
     
+    // MEDIUM-07 FIX: Cap guardian count to prevent exceeding allocated space
+    require!(guardian_list.count < 10, VaultError::CommissionTooHigh); // Reuse error; max 10 guardians
+
     // Check if exists
     for g in &guardian_list.guardians {
         if g.pubkey == guardian_pubkey {

@@ -54,7 +54,11 @@ pub struct LiquidateLoan<'info> {
     )]
     pub vault_jusdi_account: Box<Account<'info, TokenAccount>>,
     
-    #[account(mut)]
+    // HIGH-04 FIX: Validate vault is mint authority (matches deposit instruction)
+    #[account(
+        mut,
+        constraint = jusdi_mint.mint_authority.unwrap() == vault_state.key() @ VaultError::InvalidMintAuthority
+    )]
     pub jusdi_mint: Box<Account<'info, Mint>>,
     
     pub mock_skr_mint: Box<Account<'info, Mint>>,
@@ -99,10 +103,13 @@ pub fn handler(ctx: Context<LiquidateLoan>) -> Result<()> {
     // Let's assume standard calc:
     // val_usd = collateral * price * 10^expo
     
+    // HIGH-03 FIX: Replace unwrap() with ok_or() to prevent panics
     let val_usd = if expo < 0 {
-         collateral.checked_mul(price).unwrap().checked_div(10u128.pow(expo.abs() as u32)).unwrap()
+         collateral.checked_mul(price).ok_or(VaultError::MathOverflow)?
+             .checked_div(10u128.pow(expo.abs() as u32)).ok_or(VaultError::MathOverflow)?
     } else {
-         collateral.checked_mul(price).unwrap().checked_mul(10u128.pow(expo as u32)).unwrap()
+         collateral.checked_mul(price).ok_or(VaultError::MathOverflow)?
+             .checked_mul(10u128.pow(expo as u32)).ok_or(VaultError::MathOverflow)?
     };
     
     // Health Check
@@ -111,7 +118,8 @@ pub fn handler(ctx: Context<LiquidateLoan>) -> Result<()> {
     // Check: debt * 10000 >= val_usd * threshold
     
     let max_ltv = vault_state.liquidation_threshold_bps as u128;
-    let is_unhealthy = debt.checked_mul(10000).unwrap() >= val_usd.checked_mul(max_ltv).unwrap();
+    let is_unhealthy = debt.checked_mul(10000).ok_or(VaultError::MathOverflow)?
+        >= val_usd.checked_mul(max_ltv).ok_or(VaultError::MathOverflow)?;
     
     require!(is_unhealthy, VaultError::LoanHealthy);
 
@@ -155,9 +163,9 @@ pub fn handler(ctx: Context<LiquidateLoan>) -> Result<()> {
     );
     token::burn(cpi_ctx, user_loan.debt_amount)?;
     
-    // Reduce Global Debt
-    vault_state.total_debt = vault_state.total_debt.checked_sub(user_loan.debt_amount).unwrap();
-    vault_state.total_collateral = vault_state.total_collateral.checked_sub(user_loan.collateral_amount).unwrap();
+    // Reduce Global Debt — HIGH-03 FIX: graceful error handling
+    vault_state.total_debt = vault_state.total_debt.checked_sub(user_loan.debt_amount).ok_or(VaultError::MathOverflow)?;
+    vault_state.total_collateral = vault_state.total_collateral.checked_sub(user_loan.collateral_amount).ok_or(VaultError::MathOverflow)?;
 
     // Seize Collateral
     let seeds = &[
