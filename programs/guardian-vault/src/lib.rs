@@ -6,7 +6,7 @@ pub mod state;
 use anchor_lang::prelude::*;
 use instructions::*;
 
-declare_id!("wy7kkPnizRCbXvrG6fBkuat6q8AwbwTgnjxhZWcg3Si");
+declare_id!("DwuGR9qYkgYUPxR6jZSkAHdv23YPeqaAwxLAG593L1ar");
 
 #[program]
 pub mod guardian_vault {

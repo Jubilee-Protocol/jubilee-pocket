@@ -25,7 +25,7 @@ import { PublicKey, Keypair, Connection, Transaction, sendAndConfirmTransaction 
 import * as fs from "fs";
 
 // Guardian Vault Program ID
-const PROGRAM_ID = new PublicKey("wy7kkPnizRCbXvrG6fBkuat6q8AwbwTgnjxhZWcg3Si");
+const PROGRAM_ID = new PublicKey("DwuGR9qYkgYUPxR6jZSkAHdv23YPeqaAwxLAG593L1ar");
 
 // Metadata Config
 const JUSDI_METADATA = {

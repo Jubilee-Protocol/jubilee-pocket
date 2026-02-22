@@ -5,16 +5,16 @@ seeds = false
 skip-lint = false
 
 [programs.localnet]
-guardian_vault = "wy7kkPnizRCbXvrG6fBkuat6q8AwbwTgnjxhZWcg3Si"
+guardian_vault = "DwuGR9qYkgYUPxR6jZSkAHdv23YPeqaAwxLAG593L1ar"
 
 [programs.devnet]
-guardian_vault = "wy7kkPnizRCbXvrG6fBkuat6q8AwbwTgnjxhZWcg3Si"
+guardian_vault = "DwuGR9qYkgYUPxR6jZSkAHdv23YPeqaAwxLAG593L1ar"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Localnet"
+cluster = "Devnet"
 wallet = "/Users/cmpgfb/.config/solana/id.json"
 
 [scripts]
