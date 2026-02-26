@@ -184,8 +184,8 @@ See [AUDIT_REPORT.md](./docs/AUDIT_REPORT.md) for details.
   - [x] SwapScreen (Jupiter API)
   - [x] Push notifications
   - [x] Demo mode for testing
-- [ ] Mainnet launch (February 2026)
-- [ ] Orca pool creation (jUSDi/USDC)
+- [x] Mainnet launch (February 2026)
+- [ ] Bootstrap funds for pool creation (jUSDi/USDC + jUSDi/SKR)
 
 ---
 
